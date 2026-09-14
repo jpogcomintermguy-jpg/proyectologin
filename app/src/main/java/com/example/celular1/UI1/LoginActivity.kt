@@ -33,7 +33,7 @@ class LoginActivity: ComponentActivity()
                 return@setOnClickListener
             }
 
-            lifecycleScope.launch {
+            lifecycleScope.launch{
                 val user = db.userDao().login(username, password)
                 if (user != null) {
                     val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
@@ -46,7 +46,7 @@ class LoginActivity: ComponentActivity()
             }
         }
 
-        btnRegister.setOnClickListener {
+        btnRegister.setOnClickListener{
             val username = etUsername.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
